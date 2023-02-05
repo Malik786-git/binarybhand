@@ -4,12 +4,11 @@ import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { dataDigitalBestSeller } from "../../data";
 
 
 
 const Packages = () => {
-  const [packageCat, setPackageCat] = useState(packagesData.webdesign);
+  const [packageCat, setPackageCat] = useState(packagesData.logo);
 
   const settings = {
     dots: true,
@@ -75,17 +74,18 @@ const Packages = () => {
           </div>
           <div className="col-10 mx-auto mt-5 mb-5">
             <div className="packages-services">
-              <div
-                onClick={() => packageName("webdesign")}
-                className="packages-category"
-              >
-                <span>WEB DESIGN</span>
-              </div>
+             
               <div
                 onClick={() => packageName("logo")}
                 className="packages-category"
               >
                 <span>LOGO</span>
+              </div>
+              <div
+                onClick={() => packageName("webdesign")}
+                className="packages-category"
+              >
+                <span>WEB DESIGN</span>
               </div>
               <div
                 onClick={() => packageName("animation")}
@@ -100,17 +100,18 @@ const Packages = () => {
                 <span>SEO</span>
               </div>
               <div
+                onClick={() => packageName("social")}
+                className="packages-category"
+              >
+                <span>Social Media</span>
+              </div>
+              <div
                 onClick={() => packageName("ecommerce")}
                 className="packages-category"
               >
                 <span>E-COMMERCE</span>
               </div>
-              <div
-                onClick={() => packageName("shopify")}
-                className="packages-category"
-              >
-                <span>SHOPIFY</span>
-              </div>
+             
             </div>
             <div className="row packages-boxes">
 
@@ -118,30 +119,12 @@ const Packages = () => {
                 <div className="service-slider-container">
                   
                   <Slider {...settings}>
-                    {/* {dataDigitalBestSeller.map((item, index) => (
-                      <div className="cardd" key={index}>
-                        <div className="cardd-top">
-                          <h1>{item.id}</h1>
-                        </div>
-                        <div className="cardd-bottom">
-                          <h2>{item.title}</h2>
-                          <span className="categoryy">{item.desc}</span>
-                        </div>
-                      </div>
-                    ))} */}
                     {packageCat?.map((data, index) => (
                 <PackageBox data={data} key={index} />
               ))}
                   </Slider>
                     </div>
-          </div>
-                  
-                 
-
-                  {/* ////////////////// */}
-              {/* {packageCat?.map((data, index) => (
-                <PackageBox data={data} key={index} />
-              ))} */}
+            </div>
             </div>
           </div>
         </div>
